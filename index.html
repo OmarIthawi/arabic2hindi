@@ -50,8 +50,9 @@
               var output = inputEl.value;
               for (var arabicNumber = 0; arabicNumber < 10; arabicNumber += 1) {
                 var hindiNumber = hindi[arabicNumber];
+                var regex = new RegExp('' + arabicNumber, 'g');
 
-                output = output.replace('' + arabicNumber, hindiNumber, 'g');
+                output = output.replace(regex, hindiNumber);
               };
 
               outputEl.value = output;
