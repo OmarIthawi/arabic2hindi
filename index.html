@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+
+
+
+        <h1>Convert Arabic numbers to Hindi:</h1>
+        <p>
+          This this converts <code>2015</code> to <code>٢٠١٥</code>.
+        </p>
+
+        <form>
+          <label for="input">
+            Your text here:
+          </label>
+          <textarea id="input" class="form-control"></textarea>
+
+          <br />
+
+          <button id="button" class="btn btn-primary">Convert</button>
+
+          <br />
+          <br />
+
+          <label for="output">
+            The results:
+          </label>
+          <textarea id="output" class="form-control"></textarea>
+
+          <script type="text/javascript">
+            var inputEl = document.getElementById('input');
+            var outputEl = document.getElementById('output');
+            var buttonEl = document.getElementById('button');
+
+            buttonEl.onclick = function(e) {
+              var hindi = [
+                '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'
+              ];
+
+              var output = inputEl.value;
+              for (var arabicNumber = 0; arabicNumber < 10; arabicNumber += 1) {
+                var hindiNumber = hindi[arabicNumber];
+
+                output = output.replace('' + arabicNumber, hindiNumber, 'g');
+              };
+
+              outputEl.value = output;
+
+              return false;
+            };
+          </script>
+        </form>
+        
+        <hr />
+        
+        <div class="well">
+          Brought to you by <a href="http://www.omardo.com">Omar Al-Ithawi</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
